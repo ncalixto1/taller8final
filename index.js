@@ -14,6 +14,9 @@ import { register } from "./controllers/auth.js";
 import { verifyToken } from "./middleware/auth.js";
 import path from 'path';
 import ip from 'ip';
+//EXTERNAL HOSTING
+import helmet from "helmet";
+
 
 /* CONFIGURATION */
 dotenv.config();
@@ -23,6 +26,10 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+/* CONFIGURATION EXTERNAL HOSTING*/
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+
 
 /* Express React App Route */
 const __dirname = path.resolve();
