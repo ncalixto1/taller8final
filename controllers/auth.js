@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/Testing/User.js";
+//Mod
 
 /* REGISTER USER */
 export const register = async (req, res) => {
