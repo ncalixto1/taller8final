@@ -13,6 +13,7 @@ import securytraxRoute from "./routes/securitytrax.js"
 import { register } from "./controllers/auth.js";
 import { verifyToken } from "./middleware/auth.js";
 import path from 'path';
+import ip from 'ip';
 
 /* CONFIGURATION */
 dotenv.config();
@@ -47,9 +48,10 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-    
+    console.log (ip.address());
     //Customer.insertMany(dataCustomer);
-
 
   })
   .catch((error) => console.log(`${error} did not connect`));
+
+  
