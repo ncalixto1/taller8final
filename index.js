@@ -30,7 +30,6 @@ app.use(cors());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
-
 /* Express React App Route */
 const __dirname = path.resolve();
 app.use('/', express.static(path.join(__dirname, './web/build')))
